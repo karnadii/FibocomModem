@@ -1,5 +1,5 @@
 # Fibocom Modem Support for MacOS
-A kernel extension for macos to add support for Fibocom modem, currently only support L860-GL model. 
+A kernel extension for macos to add support for Fibocom modem, currently only support L860-GL model. L850-GL soon, just ordering the modem today, hope it arrive in 3 days.
 You have to make sure the USB interface for the modem already mapped in your kext.
 
 Without this kext actually l860-gl already supported through their acm/ncm native driver, however it is detected as dial up modem rather than wwan, so you dont have information like signal strength and other misc info from the modem. This kext basically just change the way macos detect the modem, from dial up to wwan. If you happy with dial up interface, you don't have to use this.
@@ -17,6 +17,11 @@ In ventura and sonoma, even though the modem detected in network but there is no
 # Speedtest
 I have antenna problem, so the result is not that good, when I use it on my OpenWRT router, the speed can reach more than 100Mbps
 ![Screen Shot 2024-05-18 at 21 50 29](https://github.com/karnadii/FibocomModem/assets/18657277/ab9e84b5-37a5-43bc-b3e7-ab760d607d53)
+
+# Setup
+You just need to set the wwan like the image bellow, use generic for vendor, and gprs for model, apn you can leave it blank or use 'internet' or your apn of choice. don't forget setting up the dns too, without setting up dns you won't be able to surf internet.
+![Screen Shot 2024-05-18 at 21 55 09](https://github.com/karnadii/FibocomModem/assets/18657277/d6aa0bc8-e8ad-45d4-9c3c-6e5553cf04fa)
+![Screen Shot 2024-05-18 at 21 55 02](https://github.com/karnadii/FibocomModem/assets/18657277/d0ff65f8-f27a-4c50-b575-419c5c3498bb)
 
 ## USB Map
 Don't forget to map your USB modem interface before using this, this image only an example, use your own usb map kext.
