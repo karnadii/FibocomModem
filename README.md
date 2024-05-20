@@ -4,7 +4,9 @@ You have to make sure the USB interface for the modem already mapped in your kex
 
 Without this kext actually l860 and l850 modems already supported through their acm/ncm native driver, however it is detected as dial up modem rather than wwan, so you dont have information like signal strength and other misc info from the modem. This kext basically just change the way macos detect the modem, from dial up to wwan. If you happy with dial up interface, you don't have to use this.
 
-Choose only one kext, either FibocomModemL850 or FibocomL860, don't use both since their usb vendorId and productId are the same, you need to add FibocomModemSupport too to your kernel config.plist. If the kext doesn't work, probably you have different hardware version, just edit the info.plist of the kext and match the cbdVersion to your hardware version.
+You need 2 kext, FibocomModemSupport.kext and FibocomModemL8X0.kext, change the X with either 5 or 6 according what model you are using, don't use both since their usb vendorId and productId are the same.
+
+If the kext doesn't work, probably you have different hardware version, just edit the info.plist of the kext and match the cbdVersion to your hardware version.
 
 I have tested this on big sur, posibbly can be used in catalina and monterey too. but starting from ventura, apple decided to drop support for wwan and dial up modem. In ventura and sonoma, even though the modem detected in network but there is no ui interface for configuring the connection. there is only option for deleting the service and deactivate the service.
 
@@ -14,9 +16,6 @@ I have tested this on big sur, posibbly can be used in catalina and monterey too
 
 ## L860
 ![Screen Shot 2024-05-18 at 03 29 26](https://github.com/karnadii/FibocomModem/assets/18657277/92727a47-da02-4828-89ca-1781f43e3970)
-![Screen Shot 2024-05-18 at 03 19 28](https://github.com/karnadii/FibocomModem/assets/18657277/01b1660b-6beb-4a49-95e8-18f3760b9f4a)
-![Screen Shot 2024-05-18 at 03 28 55](https://github.com/karnadii/FibocomModem/assets/18657277/c7875be6-cfbe-417c-b2f3-d8dd478c5b05)
-
 
 # Speedtest
 I have antenna problem, so the result is not that good, when I use it on my OpenWRT router, the speed can reach more than 100Mbps
