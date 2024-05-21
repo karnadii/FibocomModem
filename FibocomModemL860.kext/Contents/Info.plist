@@ -61,7 +61,7 @@
                         <key>ATCommands</key>
                         <dict>
                             <key>DirectoryNumber</key>
-                            <string>+cnum</string>
+                            <string></string>
                             <key>ICCID</key>
                             <string>+ccid</string>
                             <key>IMEI</key>
@@ -74,8 +74,8 @@
                             <string>+cgmm</string>
                             <key>ModemSW</key>
                             <string>+cgmr</string>
-                            <key>Serial</key>
-                            <string>+gsn</string>
+                            <key>Serial#</key>
+                            <string>+cfsn</string>
                         </dict>
                         <key>HiddenProperties</key>
                         <dict>
@@ -84,9 +84,9 @@
                             <key>ControlPortBaseName</key>
                             <string>wwan</string>
                             <key>DataPortBaseName</key>
-                            <string>wwan</string>
+                            <string>wwan2</string>
                             <key>InterfaceDriver</key>
-                            <string>AppleUSBCDCACMData</string>
+                            <string>AppleUSBACMData</string>
                             <key>StatusType</key>
                             <string>CellPhoneGSM</string>
                         </dict>
@@ -95,6 +95,11 @@
                     <true/>
                     <key>InterfaceMapping</key>
                     <dict>
+                        <key>0</key>
+                        <dict>
+                            <key>name</key>
+                            <string>modem</string>
+                        </dict>
                         <key>1</key>
                         <dict>
                             <key>name</key>
