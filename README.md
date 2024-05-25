@@ -1,6 +1,6 @@
 # Fibocom Modem Support for MacOS
 A kernel extension for macos to add support for two fibocom modem l850 and l860.
-You have to make sure the USB interface for the modem already mapped in your kext. Also you have to make sure the modem goes to usb mode and using ncm/acm protocol for l860, for l850 you can use either acm.ncm or mbim+acm. For me t440p user, the both modem l860 and l850 automatically use usb mode, if your device is still in pcie mode, refer to this ssdt/dsdt by @HeySora to change the mode to usb mode https://gist.github.com/HeySora/d720554aa5564a7800de8eca45403ef7
+You have to make sure the USB interface for the modem already mapped in your kext. Also you have to make sure the modem goes to usb mode and using ncm/acm protocol for l860, for l850 you can use either acm.ncm or mbim+acm. For me t440p user, the both modem l860 and l850 automatically use usb mode, if your device is still in pcie mode, refer to this ssdt/dsdt by @HeySora to change the mode to usb mode https://gist.github.com/HeySora/d720554aa5564a7800de8eca45403ef7. also make sure your fcc is unlocked, please refer here for fcc unlock https://github.com/xmm7360/xmm7360-usb-modeswitch
 
 Without this kext actually l860 and l850 modems already supported through their acm/ncm native driver, however it is detected as dial up modem rather than wwan, so you dont have information like signal strength and other misc info from the modem. This kext basically just change the way macos detect the modem, from dial up to wwan. If you happy with dial up interface, you don't have to use this.
 
