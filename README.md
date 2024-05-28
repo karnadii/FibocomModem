@@ -10,6 +10,8 @@ If the kext doesn't work, probably you have different hardware version, just edi
 
 I have tested this on big sur, posibbly can be used in catalina and monterey too. but starting from ventura, apple decided to drop support for wwan and dial up modem. In ventura and sonoma, even though the modem detected in network but there is no ui interface for configuring the connection. there is only option for deleting the service and deactivate the service.
 
+For some reason, macos was not able to get the signal strength, if you know what cause it and you have solution, please tell me in Issue or make a PR!
+
 # Screenshoot
 ## L850
 ![Screen Shot 2024-05-20 at 12 28 53](https://github.com/karnadii/FibocomModem/assets/18657277/7ec5ad6c-db2f-42f6-a532-c17d62c8a1b3)
